@@ -1,7 +1,10 @@
+import {Button} from '@gravity-ui/uikit';
+
+
 function CategoryList() {
     return (
         <>
-            <h2>ЖОПА</h2>
+            <Button view="normal">Жопа</Button>
         </>
     )
 }

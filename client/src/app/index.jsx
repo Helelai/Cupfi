@@ -1,15 +1,37 @@
 // Основной файл
 import React, { StrictMode } from 'react';  // Для импорта React
 import { createRoot } from 'react-dom/client'; // Для рендеринга
-import CategoryList from "../features/categories/ui/categoryLIst"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+//gravity-ui
+import '@gravity-ui/uikit/styles/styles.css';
+import {ThemeProvider } from '@gravity-ui/uikit';
+import Header from '../widgets/header/header';
+import "../app/styles/style.css";
+import HeadNavBar from '../widgets/head_navbar/headNavBar';
+import Menu from "../pages/Menu";
+import Home from '../pages/Home';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <CategoryList />
+    <ThemeProvider theme="dark">
+      <Router>
+      <div className="page">
+        <HeadNavBar></HeadNavBar>
+        <Routes>
+        <Route path="/" element={<Home />} />;
+        <Route path="/menu" element={<Menu />} /> {/* Страница меню */}
+        </Routes>
+
+      </div>
+      </Router>
+
+    </ThemeProvider>
   </StrictMode>
+
 );
 
 

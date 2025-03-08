@@ -1,0 +1,47 @@
+.header {
+    position: relative;
+    height: 96vh;
+    width: 100vw;
+    max-height: 96vh;
+    background-image: linear-gradient(rgba(0,174, 239, 0.3), rgba(138, 43, 226, 0.3), rgba(10, 25, 47, 0.3)), url("/background.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+.rhytms {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.rhytms svg {
+    width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+.logo {
+
+}
+
+.logoBig {
+    width: 300px;
+    height: 120px;
+    margin-top: 220px;
+}
+
+.headerContent {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.slogan {
+    font-size: 30px;
+    margin-top: 115px;
+    text-align: center;
+    line-height: 20px;
+    font-family: "Press Start 2P", system-ui;
+}

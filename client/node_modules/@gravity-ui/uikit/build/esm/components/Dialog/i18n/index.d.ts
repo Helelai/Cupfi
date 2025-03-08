@@ -1,0 +1,6 @@
+declare const _default: ((key: "close", params?: import("@gravity-ui/i18n").Params) => string) & {
+    keysetData: {
+        Dialog: Record<"close", import("@gravity-ui/i18n").KeyData>;
+    };
+};
+export default _default;
