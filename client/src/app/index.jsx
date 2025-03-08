@@ -1,7 +1,7 @@
 // Основной файл
 import React, { StrictMode } from 'react';  // Для импорта React
 import { createRoot } from 'react-dom/client'; // Для рендеринга
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Для настройки перехода страниц
 
 //gravity-ui
 import '@gravity-ui/uikit/styles/styles.css';
@@ -23,7 +23,7 @@ root.render(
         <HeadNavBar></HeadNavBar>
         <Routes>
         <Route path="/" element={<Home />} />;
-        <Route path="/menu" element={<Menu />} /> {/* Страница меню */}
+        <Route path="/menu" element={<Menu />} />
         </Routes>
 
       </div>

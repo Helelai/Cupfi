@@ -1,3 +1,5 @@
+// Страница с меню
+
 import "../app/styles/style.css";
 import Menu_Navbar from "../widgets/menu/menu_navbar";
 

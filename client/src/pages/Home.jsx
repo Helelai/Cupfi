@@ -1,3 +1,5 @@
+// Главная страница
+
 import Header from "../widgets/header/header";
 
 function Home() {

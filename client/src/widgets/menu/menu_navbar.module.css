@@ -18,12 +18,26 @@
 
 .category {
     color: white;
-    --g-color-private-yellow-600-solid: rgb(0, 255, 0); /* Меняем подчеркивание на зеленое */
+    font-size: 24px;
+    gap: 40px;
+    margin-left: 40px;
+}
+
+.activeCategory {
+    color: #00AEEF;
+    font-size: 24px;
+    gap: 40px;
+    margin-left: 40px;
+}
+
+.category:hover {
+    cursor: pointer;
+    color: #00AEEF;
 }
 
 .g-root_theme_dark {
     
  }
-.categories {
+.categoriesTabs {
 
 }

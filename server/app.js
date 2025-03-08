@@ -1,6 +1,7 @@
 //Подключаем express
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const categoryRouter = require("../server/routes/dish_category.routes")
 
 // Обозначаем порт сервера, если нет значения - задаем 8081, потому что 8080 занят
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 8081
 // Инициализируем наше приложение
 const app = express()
 
+app.use(cors()); // Разрешаем клиенту делать запросы
 app.use(express.json());
 app.use("/api", categoryRouter);
 

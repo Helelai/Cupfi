@@ -4,8 +4,7 @@
 import { createCategory, getCategories } from "../api/categoryAPI.js";
 
 
-export async function handleCreateCategory () {
-    const categoryNameInput = document.getElementById("categoryName");
+export async function handleCreateCategory (categoryNameInput) {
     const categoryName = categoryNameInput.value.trim();
 
     // Проверка
