@@ -1,3 +1,4 @@
+import { Button } from "@gravity-ui/uikit";
 import HeadNavBar from "../head_navbar/headNavBar";
 import styles from "../header/header.module.css";
 
@@ -6,9 +7,13 @@ function Header() {
         <>
               <header>
               <div className={styles.header}>
-                <div className="headerContent">
-                  <img src="/logoBig.png" className={styles.logoBig}></img>
+                <div className={styles.headerContent}>
+                  
+                  <div className={styles.logo}>Cupfi</div>
                   <div className={styles.slogan}>Займи место в киберпространстве!</div>
+                  <div className={styles.slogan2}>Неоновые огни, топовые сборки, идеальный пинг</div>
+                  <Button className={styles.makeRentB}>Перейти к бронированию</Button>
+
                 </div>
                 <div className={styles.rhytms}>
                 <svg width="1440" height="102" viewBox="0 0 1440 102" fill="none" xmlns="http://www.w3.org/2000/svg">

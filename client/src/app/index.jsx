@@ -9,8 +9,8 @@ import {ThemeProvider } from '@gravity-ui/uikit';
 import Header from '../widgets/header/header';
 import "../app/styles/style.css";
 import HeadNavBar from '../widgets/head_navbar/headNavBar';
-import Menu from "../pages/Menu";
-import Home from '../pages/Home';
+import Menu from "../pages/Menu/Menu";
+import Home from '../pages/Home/Home';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

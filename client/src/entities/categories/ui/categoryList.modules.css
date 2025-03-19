@@ -1,0 +1,20 @@
+.category {
+    color: white;
+    font-size: 24px;
+    gap: 40px;
+    margin-left: 40px;
+    user-select: none;
+}
+
+.activeCategory {
+    color: #00AEEF;
+    font-size: 24px;
+    gap: 40px;
+    margin-left: 40px;
+    user-select: none;
+}
+
+.category:hover {
+    cursor: pointer;
+    color: #00AEEF;
+}

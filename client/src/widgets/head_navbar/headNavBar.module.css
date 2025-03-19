@@ -7,8 +7,10 @@
 
 .logo {
     margin-left: 40px;
-    font-size: 20px;
+    font-size: 24px;
     color: white;
+    font-family: "Press Start 2P", system-ui;
+    user-select: none;
 }
 
 .navbar {
@@ -21,6 +23,7 @@
 .links {
     color: white;
     text-decoration: none;
+    user-select: none;
 }
 
 .links:hover {

@@ -1,12 +1,22 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Устанавливаем полную высоту */
+    margin: 0; /* Убираем дефолтные отступы */
+    padding: 0;
+    background-color: #0A192F; /* Фоновый цвет для всего body */
+    font-family: Roboto, sans-serif;
 }
 
 .page {
     background-color: #0A192F;
-    min-height:100vh;
+    min-height: 100dvh;
+    font-family: Roboto;
 }
 
 .pageCont {
@@ -17,5 +27,4 @@ body {
     justify-content: center;
     margin: auto;
 }
-
 
