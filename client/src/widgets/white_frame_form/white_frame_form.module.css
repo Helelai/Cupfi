@@ -1,0 +1,17 @@
+.form {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    width: 598px;
+    height: 318px;
+}
+
+.text {
+    color: white;
+    font-size: 28px;
+    padding: 30px;
+    text-align: center;
+    line-height: 33px;
+}

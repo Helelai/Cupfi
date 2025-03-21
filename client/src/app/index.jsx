@@ -11,6 +11,11 @@ import "../app/styles/style.css";
 import HeadNavBar from '../widgets/head_navbar/headNavBar';
 import Menu from "../pages/Menu/Menu";
 import Home from '../pages/Home/Home';
+import Tariffs from "../pages/Tariffs/Tariffs"
+import Reservation from "../pages/Reservation/Reservation"
+import Reviews from "../pages/Reviews/Reviews"
+import Contacts from "../pages/Contacts/Contacts"
+import Account from "../pages/Account/Account"
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -23,7 +28,12 @@ root.render(
         <HeadNavBar></HeadNavBar>
         <Routes>
         <Route path="/" element={<Home />} />;
+        <Route path="/tariffs" element={<Tariffs />} />
+        <Route path="/reservation" element={<Reservation />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/account" element={<Account />} />
         </Routes>
 
       </div>

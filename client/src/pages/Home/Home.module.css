@@ -3,4 +3,14 @@ h2 {
     font-family: Roboto;
     text-align: center;
     margin-top: 250px;
+    margin-bottom: 200px;
+}
+
+.gradientBlockContainer {
+    display: flex;
+    justify-content: center;
+}
+.advantages {
+    display: flex;
+    gap: 50px;
 }

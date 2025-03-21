@@ -11,10 +11,12 @@ function HeadNavBar() {
             </div>
             <nav className={styles.navlist}>
                 <Link to="/" className={styles.links}>Главная</Link>
-                <Link href='#' className={styles.links}>Тарифы</Link>
+                <Link to='/tariffs' className={styles.links}>Тарифы</Link>
+                <Link to='/reservation' className={styles.links}>Забронировать</Link>
                 <Link to="/menu" className={styles.links}>Меню</Link>
-                <Link href='#' className={styles.links}>Контакты</Link>
-                <Link href='#' className={styles.links}>Личный кабинет</Link>
+                <Link to="/reviews" className={styles.links}>Отзывы</Link>
+                <Link to='/contacts' className={styles.links}>Контакты</Link>
+                <Link to='/account' className={styles.links}>Личный кабинет</Link>
             </nav>
         </div>
 
