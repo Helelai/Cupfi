@@ -1,0 +1,10 @@
+.custom-button {
+    font-size: 20px;
+    width: 300px;
+    height: 45px;
+    padding-top: 6px;
+    border-radius: 10px !important;
+    text-align: center;
+    font-family: Roboto;
+    box-shadow: 0px 0px 5px 2px rgb(60, 149, 201);
+}

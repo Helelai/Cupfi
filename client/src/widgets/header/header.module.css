@@ -1,8 +1,7 @@
 .header {
     position: relative;
-    height: 96vh;
+    height: 100vh;
     width: 100vw;
-    max-height: 96vh;
     background-image: linear-gradient(rgba(0,174, 239, 0.3), rgba(138, 43, 226, 0.3), rgba(10, 25, 47, 0.3)), url("/background.png");
     background-size: cover;
     background-position: center;
@@ -25,8 +24,8 @@
 .logo {
     font-size: 96px;
     margin-top: 235px;
-    text-align: center;
     user-select: none;
+    margin-left: 15px;
     font-family: "Press Start 2P", system-ui;
 }
 
@@ -58,17 +57,5 @@
     text-align: center;
     line-height: 70px;
     user-select: none;
-    font-family: Roboto;
-}
-
-.makeRentB {
-    margin-top: 25px;
-    font-size: 24px;
-    width: 55%;
-    height: 64px;
-    padding-top: 14px;
-    border: solid white 2px;
-    border-radius: 15px !important;
-    text-align: center;
     font-family: Roboto;
 }

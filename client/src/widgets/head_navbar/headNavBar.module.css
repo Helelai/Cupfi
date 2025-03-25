@@ -15,9 +15,16 @@
 
 .navbar {
     display: flex;
+    top: 0;
     justify-content: space-between;
     padding: 10px;
     background-color: #1C1F26;
+    border-bottom: black solid 1px;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    z-index: 10;
 }
 
 .links {

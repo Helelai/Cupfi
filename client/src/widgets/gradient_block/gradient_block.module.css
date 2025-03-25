@@ -1,7 +1,7 @@
 .block {
     width: 268px;
     height: 265px;
-    background: linear-gradient(#9BB7F2, #9283EF);
+    background: linear-gradient(rgba(155, 182, 242, 0.541), rgba(156, 122, 236, 0.8));
     border-radius: 10px;
     border-width: 1px;
     border-color: white;

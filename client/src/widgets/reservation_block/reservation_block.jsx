@@ -2,16 +2,19 @@ import { Button } from "@gravity-ui/uikit";
 import styles from "../reservation_block/reservation_block.module.css";
 import WhiteBlock from "../white_block/white_block";
 import WhiteFrameForm from "../white_frame_form/white_frame_form";
+import { useNavigate } from "react-router-dom";
 
 function ReservationBlock() {
+    const navigate = useNavigate(); 
     return (
         <div className={styles.reservation}>
-            <div className={styles.textBlock}>
-                <WhiteFrameForm text={"Cupfi – это место, где комфорт и технологии создают идеальное пространство для отдыха и работы. У нас можно расслабиться с любимым напитком, поиграть, поработать или просто провести время в приятной атмосфере."}>
-                    <Button>Забронировать</Button>
+            <div>
+                <WhiteFrameForm button={"Перейти к бронированию"} onClick={() => navigate("/reservation")} className={styles.textBlock}> 
+                    <h4 className={styles.title}>Хотите заранее забронировать место? Теперь это можно сделать онлайн!</h4>
+                    <p className={styles.text}>Выбирайте удобное время и зону – игровую или рабочую и ваше место будет готово к вашему приходу.</p>
                 </WhiteFrameForm>
             </div>
-            <WhiteBlock img="welcome"></WhiteBlock>
+            <WhiteBlock img="reservation"></WhiteBlock>
         </div>
 
 

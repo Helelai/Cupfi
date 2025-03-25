@@ -16,6 +16,7 @@ import Reservation from "../pages/Reservation/Reservation"
 import Reviews from "../pages/Reviews/Reviews"
 import Contacts from "../pages/Contacts/Contacts"
 import Account from "../pages/Account/Account"
+import { Footer } from '../widgets/Footer/Footer';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -35,10 +36,10 @@ root.render(
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/account" element={<Account />} />
         </Routes>
-
       </div>
       </Router>
 
+      <Footer></Footer>
     </ThemeProvider>
   </StrictMode>
 

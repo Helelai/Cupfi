@@ -1,8 +1,13 @@
 import { Button } from "@gravity-ui/uikit";
 import HeadNavBar from "../head_navbar/headNavBar";
 import styles from "../header/header.module.css";
+import CustomBigButton from "../CustomBigButton/CustomBigButton";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+
+  const navigate = useNavigate();
+
     return (
         <>
               <header>
@@ -12,7 +17,7 @@ function Header() {
                   <div className={styles.logo}>Cupfi</div>
                   <div className={styles.slogan}>Займи место в киберпространстве!</div>
                   <div className={styles.slogan2}>Неоновые огни, топовые сборки, идеальный пинг</div>
-                  <Button className={styles.makeRentB}>Перейти к бронированию</Button>
+                  <CustomBigButton onClick={() => navigate("/reservation")}>Перейти к бронированию</CustomBigButton>
 
                 </div>
                 <div className={styles.rhytms}>

@@ -1,7 +1,7 @@
 // Страница с меню
 
 import "../../app/styles/style.css";
-import "../../widgets/menu_card/menu_card.modules.css"
+import "../../widgets/menu_card/menu_card.module.css"
 import { Button } from "@gravity-ui/uikit";
 import Menu_Navbar from "../../widgets/menu/menu_navbar";
 import MenuCard from "../../widgets/menu_card/menu_card";

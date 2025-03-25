@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDishes } from "../api/dishAPI";
+import styles from "../../../widgets/menu_card/menu_card.module.css"
 import MenuCard from "../../../widgets/menu_card/menu_card";
 import { handleGetDishes } from "../model/dishModel";
 
@@ -27,7 +28,7 @@ function DishList({selectedCategory}) {
     }, [selectedCategory]);
 
     return (
-        <div className="cardsContainer">
+        <div className={styles.cardsContainer}>
             {dishes.map((dish) => (<MenuCard key={dish.id} name={dish.name} description={dish.description} price={dish.price} imageUrl={`${dish.name}.png`} category={dish.category_id}/>))}
         </div>
     )
