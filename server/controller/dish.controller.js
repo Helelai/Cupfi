@@ -3,12 +3,12 @@ const db = require("../db");
 class DishController {
     async createDish(req,res) {
         // Получаем нужную информацию из запроса
-        const { name, price, category_id } = req.body;
+        const { name, price, category_id, description, weight, unit_measurement, dish_status } = req.body;
         //Делаем запрос к бд
         // RETURNING нужно, чтобы после выполнения оно вернуло блюдо
         const newDish = await db.query(
-            "INSERT INTO dish (name, price, category_id) VALUES ($1, $2, $3) RETURNING *",
-            [name, price, category_id]
+            "INSERT INTO dish (name, price, category_id, description, weight, unit_measurement, dish_status) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+            [name, price, category_id, description, weight, unit_measurement, dish_status]
         );
         //Выводим
         res.json(newDish.rows[0]);
@@ -24,7 +24,7 @@ class DishController {
         }
         //Если нет - выводим все блюда
         else {
-            dishes = await db.query("SELECT * FROM dish");
+            dishes = await db.query("SELECT * FROM dish where dish_status_id = 1");
         }
         res.json(dishes.rows);
     }
@@ -32,7 +32,7 @@ class DishController {
         //Получаем айди блюда из запроса
         const id = req.params.id;
         //Ищем блюдо с таким айди
-        const dish = await db.query("SELECT * FROM dish where id = $1", [id]);
+        const dish = await db.query("SELECT * FROM dish", [id]);
         res.json(dish.rows[0]);
     }
     async updateDish(req,res) {
@@ -46,12 +46,13 @@ class DishController {
             console.error("Ошибка:" + error);
         }
     }
-    async deleteDish(req,res) {
+    
+    /*async deleteDish(req,res) {
         //получаем айди удаляемого блюда
         const id = req.params.id;
         const dish = await db.query("DELETE from dish where id = $1", [id]);
         res.json(dish.rows[0]);
-    }
+    }*/
 }
 
 module.exports = new DishController();

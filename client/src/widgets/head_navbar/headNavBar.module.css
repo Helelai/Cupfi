@@ -36,3 +36,9 @@
 .links:hover {
     color: #00AEEF;
 }
+
+.main-link {
+    color: white;
+    text-decoration: none;
+    user-select: none;
+}

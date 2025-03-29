@@ -29,3 +29,8 @@
     display: flex;
     gap: 125px;
 }
+
+.weight {
+    margin-bottom: 20px;
+    font-size: 18px;
+}

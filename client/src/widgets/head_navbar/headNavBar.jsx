@@ -7,7 +7,7 @@ function HeadNavBar() {
         <>
         <div className={styles.navbar}>
             <div className={styles.logo}>
-                Cupfi
+                <Link to="/" className={styles["main-link"]}>Cupfi</Link>
             </div>
             <nav className={styles.navlist}>
                 <Link to="/" className={styles.links}>Главная</Link>
