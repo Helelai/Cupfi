@@ -1,9 +1,9 @@
 import { use, useEffect, useState } from "react";
 import { getDishes } from "../api/dishAPI";
-import styles from "../../../widgets/menu_card/menu_card.module.css"
-import MenuCard from "../../../widgets/menu_card/menu_card";
+import styles from "../../../shared/menu_card/menu_card.module.css"
+import MenuCard from "../../../shared/menu_card/menu_card";
 import { handleGetDishes } from "../model/dishModel";
-import { handleGetUnit_Measurements } from "../../unit_measurements/model/unit_measurementModel";
+import { getUnitMeasurements } from "../../unit_measurements/api/unit_measurementAPI";
 
 function DishList({selectedCategory}) {
     const [dishes, setDishes] = useState([]);
@@ -29,7 +29,7 @@ function DishList({selectedCategory}) {
 
         async function fetchUnitMeasurements() {
             try {
-                let data = await handleGetUnit_Measurements();
+                let data = await getUnitMeasurements();
                 setUnitMeasurements(data);
             }
             catch (error) {

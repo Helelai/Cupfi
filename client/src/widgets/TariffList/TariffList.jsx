@@ -5,8 +5,6 @@ import styles from "../TariffList/TariffList.module.css"
 
 export function TariffList() {
     const [tariffs, setTariffs] = useState([]);
-
-    
     
     const tariffText = {
         1: "Подойдёт для: CS:GO, Dota 2, LoL, Valorant, старые игры",

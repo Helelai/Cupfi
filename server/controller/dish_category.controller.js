@@ -12,7 +12,7 @@ class Dish_CategoryController {
     }
     async getCategories(req,res) {
         const categories = await db.query("SELECT * FROM dish_category");
-        res.json(categories.rows);
+        res.status(200).json(categories.rows);
     }
     async getCategory(req,res) {
         

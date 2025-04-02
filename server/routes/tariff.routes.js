@@ -8,7 +8,7 @@ const roleMiddleware = require("../middleware/role_middleware")
 const tariffController = require("../controller/tariff.controller");
 
 router.post("/tariff",[authMiddleware, roleMiddleware(["user"])], tariffController.createTariff);
-router.get("/tariff", [authMiddleware, roleMiddleware(["user"])], tariffController.getTariffs);
+router.get("/tariff", tariffController.getTariffs);
 router.put("/tariff/:id", [authMiddleware, roleMiddleware(["user"])], tariffController.updateTariff);
 
 module.exports = router;

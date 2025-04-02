@@ -1,21 +1,17 @@
-// адрес для работы с категориями
-const API_URL = "http://localhost:8081/api";
+import {API_URL} from "../../../../config"
 
 export async function getUnitMeasurements() {
-    try {
-        const response = await fetch(`${API_URL}/unit_measurement`, {
-            method: "GET",
-        })
-
-        if (!response.ok) {
-            throw new Error("Ошибка отправки запроса")
-        }
-
-        return await response.json();
-    }
-    catch(error) {
+    const response = await fetch(`${API_URL}/unit_measurement`, {
+        method: "GET",
+    }).catch((error) => {
         console.error(error);
-        throw error;
+        return null;
+    })
+
+    if (!response.ok) {
+        throw new Error("Ошибка отправки запроса")
     }
+
+    return await response.json();
 }
 

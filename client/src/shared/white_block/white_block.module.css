@@ -1,0 +1,11 @@
+
+.img {
+    height: 349px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    border-radius: 10px;
+    border: white solid 2px;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+}

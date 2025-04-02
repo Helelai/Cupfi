@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Д
 //gravity-ui
 import '@gravity-ui/uikit/styles/styles.css';
 import {ThemeProvider } from '@gravity-ui/uikit';
-import Header from '../widgets/header/header';
+import Header from '../shared/header/header';
 import "../app/styles/style.css";
-import HeadNavBar from '../widgets/head_navbar/headNavBar';
+import HeadNavBar from '../shared/head_navbar/headNavBar';
 import Menu from "../pages/Menu/Menu";
 import Home from '../pages/Home/Home';
 import Tariffs from "../pages/Tariffs/Tariffs"
@@ -16,7 +16,7 @@ import Reservation from "../pages/Reservation/Reservation"
 import Reviews from "../pages/Reviews/Reviews"
 import Contacts from "../pages/Contacts/Contacts"
 import Account from "../pages/Account/Account"
-import { Footer } from '../widgets/Footer/Footer';
+import { Footer } from '../shared/Footer/Footer';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

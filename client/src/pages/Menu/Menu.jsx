@@ -1,10 +1,10 @@
 // Страница с меню
 
 import "../../app/styles/style.css";
-import "../../widgets/menu_card/menu_card.module.css"
+import "../../shared/menu_card/menu_card.module.css"
 import { Button } from "@gravity-ui/uikit";
-import Menu_Navbar from "../../widgets/menu/menu_navbar";
-import MenuCard from "../../widgets/menu_card/menu_card";
+import Menu_Navbar from "../../shared/menu/menu_navbar";
+import MenuCard from "../../shared/menu_card/menu_card";
 import { useState } from "react";
 import { handleCreateDish } from "../../entities/dishes/model/dishModel";
 import DishList from "../../entities/dishes/ui/dishList";

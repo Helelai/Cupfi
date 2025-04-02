@@ -1,16 +1,14 @@
 // Главная страница
 
-import Header from "../../widgets/header/header";
-import WelcomeBlock from "../../widgets/welcome_block/welcome_block";
+import Header from "../../shared/header/header";
+import WelcomeBlock from "../../shared/welcome_block/welcome_block";
 import styles from "../Home/Home.module.css";
-import GradientBlock from "../../widgets/gradient_block/gradient_block";
-import ReservationBlock from "../../widgets/reservation_block/reservation_block";
-import { Button } from "@gravity-ui/uikit";
+import GradientBlock from "../../shared/gradient_block/gradient_block";
+import ReservationBlock from "../../shared/reservation_block/reservation_block";
 import { useState } from "react";
 import DishList from "../../entities/dishes/ui/dishList";
 import "../../app/styles/style.css";
-import CustomBigButton from "../../widgets/CustomBigButton/CustomBigButton";
-import CustomSmallButton from "../../widgets/CustomSmallButton/CustomSmallButton";
+import CustomSmallButton from "../../shared/CustomSmallButton/CustomSmallButton";
 import {useNavigate} from "react-router-dom";
 
 function Home() {

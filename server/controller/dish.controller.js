@@ -11,7 +11,7 @@ class DishController {
             [name, price, category_id, description, weight, unit_measurement, dish_status]
         );
         //Выводим
-        res.json(newDish.rows[0]);
+        res.status(200).json(newDish.rows[0]);
     }
     async getDishes(req,res) {
         //Получаем категорию блюда из бд
@@ -26,14 +26,14 @@ class DishController {
         else {
             dishes = await db.query("SELECT * FROM dish where dish_status_id = 1");
         }
-        res.json(dishes.rows);
+        res.status(200).json(dishes.rows);
     }
     async getDish(req,res) {
         //Получаем айди блюда из запроса
         const id = req.params.id;
         //Ищем блюдо с таким айди
         const dish = await db.query("SELECT * FROM dish", [id]);
-        res.json(dish.rows[0]);
+        res.status(200).json(dish.rows[0]);
     }
     async updateDish(req,res) {
         try {
@@ -44,15 +44,10 @@ class DishController {
         }
         catch(error) {
             console.error("Ошибка:" + error);
+            return res.status(400).json({message: "Возникла ошибка при обновлении блюда."})
         }
     }
     
-    /*async deleteDish(req,res) {
-        //получаем айди удаляемого блюда
-        const id = req.params.id;
-        const dish = await db.query("DELETE from dish where id = $1", [id]);
-        res.json(dish.rows[0]);
-    }*/
 }
 
 module.exports = new DishController();
