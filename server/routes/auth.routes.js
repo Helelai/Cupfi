@@ -6,6 +6,11 @@ const authMiddleware = require("../middleware/auth_middleware")
 const roleMiddleware = require("../middleware/role_middleware")
 const AuthController = require("../controller/auth.controller");
 
+router.get("/check-auth", authMiddleware, (req, res) => {
+    //Если пользователь авторизован, возвращаем его и булево значение.
+    res.json({isAuth: true, user: req.user})
+});
+
 router.post("/registration", [
     check("surname", "Поле фамилии не может быть пустым").notEmpty(),
     check("name", "Поле имени не может быть пустым").notEmpty(),

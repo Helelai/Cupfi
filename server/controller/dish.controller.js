@@ -40,7 +40,7 @@ class DishController {
         //Получаем все поля
         const { name, price, category_id } = req.body;
         const dish = await db.query("UPDATE dish set name = $1, price = $2, category_id = $3 RETURNING *", [name, price, category_id]);
-        res.json(dish.rows[0]);
+        res.status(200).json(dish.rows[0]);
         }
         catch(error) {
             console.error("Ошибка:" + error);

@@ -1,0 +1,18 @@
+h3 {
+    margin-top: 70px;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+p {
+    line-height: 30px;
+}
+
+.cont {
+    margin-bottom: 50px;
+    text-align: center;
+}

@@ -7,8 +7,8 @@ const roleMiddleware = require("../middleware/role_middleware")
 //Подключаем контроллер
 const tariffController = require("../controller/tariff.controller");
 
-router.post("/tariff",[authMiddleware, roleMiddleware(["user"])], tariffController.createTariff);
+router.post("/tariff",[authMiddleware, roleMiddleware(["admin"])], tariffController.createTariff);
 router.get("/tariff", tariffController.getTariffs);
-router.put("/tariff/:id", [authMiddleware, roleMiddleware(["user"])], tariffController.updateTariff);
+router.put("/tariff/:id", [authMiddleware, roleMiddleware(["admin"])], tariffController.updateTariff);
 
 module.exports = router;

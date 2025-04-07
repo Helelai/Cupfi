@@ -1,5 +1,5 @@
 // Основной файл
-import React, { StrictMode } from 'react';  // Для импорта React
+import React, { StrictMode, useEffect, useState } from 'react';  // Для импорта React
 import { createRoot } from 'react-dom/client'; // Для рендеринга
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Для настройки перехода страниц
 
@@ -17,32 +17,54 @@ import Reviews from "../pages/Reviews/Reviews"
 import Contacts from "../pages/Contacts/Contacts"
 import Account from "../pages/Account/Account"
 import { Footer } from '../shared/Footer/Footer';
+import { Admin } from '../pages/Admin/Admin';
+import { useAuth } from '../features/auth/model/useAuth';
+import { Registration } from '../pages/Registration/Registration';
+import { Login } from '../pages/Login/Login';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-root.render(
-  <StrictMode>
-    <ThemeProvider theme="dark">
-      <Router>
-      <div className="page">
-        <HeadNavBar></HeadNavBar>
-        <Routes>
-        <Route path="/" element={<Home />} />;
-        <Route path="/tariffs" element={<Tariffs />} />
-        <Route path="/reservation" element={<Reservation />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/account" element={<Account />} />
-        </Routes>
-      </div>
-      </Router>
+function App() {
+  const {role} = useAuth();
+  const [isLoaded, setIsLoaded] = useState(false);
 
-      <Footer></Footer>
-    </ThemeProvider>
-  </StrictMode>
+  useEffect(()=> {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 0);
+  }, [])
 
-);
+  if (!isLoaded) {
+    return <><div className="">Загрузка...</div></>
+  }
+    return (
+      <StrictMode>
+      <ThemeProvider theme="dark">
+        <Router>
+        <div className="page">
+          <HeadNavBar></HeadNavBar>
+          <Routes>
+          <Route path="/" element={role === "admin" ? <Admin/> : <Home/>} />;
+          <Route path="/tariffs" element={<Tariffs />} />
+          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/pc" element={<Admin />} />
+          </Routes>
+        </div>
+        </Router>
+        <Footer></Footer>
+      </ThemeProvider>
+    </StrictMode>
+  )
+}
+
+root.render(<App/>)
 
 

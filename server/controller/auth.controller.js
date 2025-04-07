@@ -57,7 +57,7 @@ class AuthController {
             if (!user) {
                 return res.status(400).json({message: "Такого пользователя не существует"})
             }
-
+            
             const hashedPassword = user.rows[0].password;
             const validPassword = await argon2.verify(hashedPassword, password);
 
@@ -66,6 +66,7 @@ class AuthController {
             }
 
             const userRole = user.rows[0].role_id === 1? "admin":"user"; 
+
             // функция генерации токена
             const token = generateAccessToken(user.rows[0].id, userRole);
             return res.json({token});

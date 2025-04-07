@@ -1,19 +1,25 @@
-// адрес для работы с регистрацией/авторизацией
-const API_URL = "http://localhost:8081/api/auth/";
+import { API_URL } from "../../../../config";
+import { saveToken } from "../model/authService";
 
-export async function registration({surname, name, patronymic, email, phone_number, username, password}) {
+
+export async function registration(surname, name, patronymic, email, phone_number, username, password) {
+    const role_id = 1;
     try {
-        const response = await fetch(`${API_URL}/registration`, {
+        const response = await fetch(`${API_URL}/auth/registration`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify({surname, name, patronymic, email, phone_number, username, password})
+            body: JSON.stringify({surname, name, patronymic, email, phone_number, role_id, username, password})
+        }).catch((error) => {
+            return error;
         })
 
-        if (!response.ok) {
-            throw new Error("Ошибка отправки запроса");
-        }
+        /*const data = await response.json();
+        console.log("Токен:" + data.token);
+        saveToken(data.token);*/
+
+       
         return await response.json();
     }
     catch (e) {
@@ -22,9 +28,11 @@ export async function registration({surname, name, patronymic, email, phone_numb
     }
 }
 
-export async function login({username, password}) {
+export async function login(username, password) {
+
     try {
-        const response = await fetch(`${API_URL}/login`, {
+        console.log("login: " + username + " " + password);
+        const response = await fetch(`${API_URL}/auth/login`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -35,7 +43,12 @@ export async function login({username, password}) {
         if (!response.ok) {
             throw new Error("Ошибка отправки запроса");
         }
-        return await response.json();
+
+        const data = await response.json();
+        console.log("Токен:" + data.token);
+        saveToken(data.token);
+        
+        return await data;
     }
     catch (e) {
         console.log("Ошибка API авторизации: ", e);
