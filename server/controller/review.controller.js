@@ -3,7 +3,7 @@ const db = require("../db");
 class ReviewController {
     async getAllReviews(req, res) {
         try {
-            const allReviews = await db.query("SELECT * FROM review");
+            const allReviews = await db.query("SELECT * FROM review where review_status_id = 1");
             res.status(200).json(allReviews.rows);
         }
         catch (error) {

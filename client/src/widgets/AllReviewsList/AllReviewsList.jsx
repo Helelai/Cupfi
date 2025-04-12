@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { handleGetReviews } from "../../entities/reviews/model/reviewsModel";
+import { handleGetAllReviews, handleGetReviews } from "../../entities/reviews/model/reviewsModel";
 import { Review } from "../Review/Review";
 import { handleGetUsers } from "../../entities/user/model/userModel";
 
 
-export function ReviewsList() {
+export function AllReviewsList() {
     const [reviews, setReviews] = useState([]);
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         async function fetchReviews() {
-            const data = await handleGetReviews();
-            console.log("fetchReviews:", data);
+            const data = await handleGetAllReviews();
+            console.log("Отзывы в AllReviewsList:", data); // Проверьте структуру данных
             setReviews(data);
         }
 
@@ -32,11 +32,11 @@ export function ReviewsList() {
             <div className="cont">
                 {reviews.map((review) => {
                     const userName = getUserNameById(review.user_id);
-                    console.log(review.id);
+                    console.log("review_id", review.id);
 
                     return (
-                        <Review review_id={review.id} user_id={userName} comment={review.comment} 
-                        creation_data_and_time={review.creation_data_and_time} rating={review.rating}></Review>
+                        <Review key={review.id} review_id={review.id} user_id={userName} comment={review.comment} 
+                        creation_data_and_time={review.creation_data_and_time} rating={review.rating} adminButton={true}></Review>
                     )
                 })}
             </div>

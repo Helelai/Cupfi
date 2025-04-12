@@ -1,4 +1,4 @@
-import { createReview, getAllReviews, getReviews } from "../api/reviewsAPI";
+import { createReview, getAllReviews, getReviews, updateReview } from "../api/reviewsAPI";
 import { API_URL } from "../../../../config";
 
 function getFormattedDateTime() {
@@ -48,10 +48,19 @@ export async function handleCreateReview(comment, rating) {
 
 export async function handleGetAllReviews() {
     const allReviews = await getAllReviews();
+    console.log("AllReviews: ", allReviews);
     return allReviews;
 }
 
 export async function handleGetReviews() {
     const reviews = await getReviews();
+    return reviews;
+}
+
+export async function handleUpdateReview(id) {
+    const reviews = await updateReview(id).catch((error) => {
+        console.log(error);
+        return null;
+    });
     return reviews;
 }

@@ -1,6 +1,9 @@
+import { handleUpdateReview } from "../../entities/reviews/model/reviewsModel";
+import { CustomSmallestShadowButton } from "../../shared/CustomSmallestShadowButton/CustomSmallestShadowButton";
 import styles from "../Review/Review.module.css"
 
-export function Review({user_id, comment, creation_data_and_time, rating}) {
+export function Review({review_id, user_id, comment, creation_data_and_time, rating, adminButton}) {
+    
     return (
         <>
             <div className={styles.cont}>
@@ -10,6 +13,9 @@ export function Review({user_id, comment, creation_data_and_time, rating}) {
                 <p>{comment}</p>
                 <p>{formatDate(creation_data_and_time)}</p>
                 <p>Рейтинг: {rating}</p>
+                {adminButton && <CustomSmallestShadowButton onClick={() => {
+                    handleUpdateReview(review_id);
+                }} className={styles["admin-button"]}>Опубликовать</CustomSmallestShadowButton>}
             </div>
         </>
     )
