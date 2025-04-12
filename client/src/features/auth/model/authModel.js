@@ -15,10 +15,13 @@ export async function handleRegistration(surname, name, patronymic, email, phone
             return null;
         });
 
-        if (!newUser.ok) {
+        if (newUser.ok) {
+            window.location.reload();
+        }
+        else {
             alert("Возникла ошибка при авторизации");
         }
-        window.location.reload();
+
         return newUser;
     }
     catch (e) {

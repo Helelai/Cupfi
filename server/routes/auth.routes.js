@@ -18,7 +18,6 @@ router.post("/registration", [
     check("email", "Поле почты не может быть пустым").notEmpty(),
     check("email", "Введите корректный адрес электронной почты").isEmail(),
     check("phone_number", "Введите номер телефона").notEmpty(),
-    check("phone_number","Введите корректный номер телефона").isMobilePhone(),
     check("username", "Имя пользователя не может быть пустым").notEmpty(),
     check("password", "Пароль не может быть пустым").notEmpty(),
     check("password", "Пароль должен быть больше 4 и меньше 10 символов.").isLength({min: 4, max: 10})

@@ -2,8 +2,10 @@ import { ReviewCreationForm } from "../../widgets/ReviewCreationForm/ReviewCreat
 import "../../app/styles/style.css";
 import styles from "../Reviews/Reviews.module.css"
 import { CustomSmallestShadowButton } from "../../shared/CustomSmallestShadowButton/CustomSmallestShadowButton";
+import { ReviewsList } from "../../widgets/ReviewsList/ReviewsList";
 
 function Reviews() {
+    
     
     return (
         <>
@@ -11,7 +13,7 @@ function Reviews() {
                 <h2>Отзывы</h2>
                 <div className={styles.cont}>
                     <ReviewCreationForm></ReviewCreationForm>
-                    
+                    <ReviewsList></ReviewsList>
                 </div>
 
             </div>

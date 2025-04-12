@@ -1,4 +1,4 @@
-import { createReview, getAllReviews } from "../api/reviewsAPI";
+import { createReview, getAllReviews, getReviews } from "../api/reviewsAPI";
 import { API_URL } from "../../../../config";
 
 function getFormattedDateTime() {
@@ -49,4 +49,9 @@ export async function handleCreateReview(comment, rating) {
 export async function handleGetAllReviews() {
     const allReviews = await getAllReviews();
     return allReviews;
+}
+
+export async function handleGetReviews() {
+    const reviews = await getReviews();
+    return reviews;
 }

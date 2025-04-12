@@ -32,7 +32,7 @@ class DishController {
         //Получаем айди блюда из запроса
         const id = req.params.id;
         //Ищем блюдо с таким айди
-        const dish = await db.query("SELECT * FROM dish", [id]);
+        const dish = await db.query("SELECT * FROM dish where id = $1", [id]);
         res.status(200).json(dish.rows[0]);
     }
     async updateDish(req,res) {
